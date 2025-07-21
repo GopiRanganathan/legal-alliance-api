@@ -5,6 +5,10 @@ const AccountSchema = new Schema({
         type: String,
         unique: true
     },
+    phoneNumber: {
+        type: String,
+        unique: true
+    },
     password: {
         type: String,
         required: true
@@ -13,11 +17,20 @@ const AccountSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'user',
         required: true
-    }
+    },
+    emailVerified: {
+        type: Boolean,
+        default: false,
+    },
+
+    phoneVerified: {
+        type: Boolean,
+        default: false,
+    },
 },
- {
-    timestamps: true,
-  })
+    {
+        timestamps: true,
+    })
 
 const AccountModel = model("account", AccountSchema)
 
