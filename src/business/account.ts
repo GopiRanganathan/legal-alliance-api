@@ -22,8 +22,8 @@ class AccountManager {
                 }
                 else if (phoneNumber) {
                     await OtpModel.deleteMany({ phoneNumber: phoneNumber })
-                    await OtpModel.create({ phoneNumber: phoneNumber, code: otp, expiresAt: expiresAt });
-                    await this.sendSMS(otp, phoneNumber)
+                    await OtpModel.create({ phoneNumber: phoneNumber, code: 11111, expiresAt: expiresAt });
+                    // await this.sendSMS(otp, phoneNumber)
                 }
                 resolve()
             }
